@@ -9,8 +9,10 @@ public class MinisterstvoKontaktySteps {
     private MinisterstvoKontaktPage kontaktPage;
 
     @Step
-    public void checkMinisterKontakt() {
-
+    public void checkMinisterKontakt(String ministerstvo,String email,String telefon) {
+        checkMinisterstvo(ministerstvo);
+        checkMinisterEmail(email);
+        checkMinisterTelefon(telefon);
     }
 
     @Step
@@ -22,7 +24,7 @@ public class MinisterstvoKontaktySteps {
     @Step
     public void checkMinisterEmail(String email) {
         Assert.assertTrue("Emailova adresa ministra nie je zobrazena",kontaktPage.isMinisterEmailVisible());
-        Assert.assertEquals("Emailove adresy ministra sa nezhoduju",email,kontaktPage.getMinisterAdresa());
+        Assert.assertEquals("Emailove adresy ministra sa nezhoduju",email,kontaktPage.getMinisterEmail());
     }
 
     @Step

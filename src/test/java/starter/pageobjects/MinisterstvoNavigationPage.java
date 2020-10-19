@@ -23,6 +23,7 @@ public class MinisterstvoNavigationPage extends PageObject {
     public void isKontaktVisible() {
         kontakt.isVisible();
     }
+
     public void clickOnKontakt() {
         kontakt.click();
     }
